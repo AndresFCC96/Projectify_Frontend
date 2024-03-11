@@ -1,0 +1,50 @@
+<header class="header">
+    <div class="container vh-50 ">
+  
+      <!-- Navbar -->
+      <nav class="row text-white justify-content-between align-items-center text-uppercase ">
+      <!-- Logo -->
+      <a href="#" class="col-auto text-reset">
+        <img src="../../../../../assets/Logos/logo_inicio.png" alt="Logo Projectify" class="img-logo">
+        Projectify
+      </a>
+      <!-- Anclas -->
+      <div class="col-auto">
+        <a [routerLink]="['Subastas']" href="#" class="text-reset pr-3">Projects</a>
+        <a *ngIf="loggeado === false ; else elseBlock" [routerLink]="['Auth/Login']" routerLinkActive="active" class="text-reset">Ingresar</a>
+        <ng-template #elseBlock>
+          <label class="text-3xl font-bold underline">Hi! {{user.firstName}} {{user.lastName}}
+            <button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
+            <mat-menu #menu="matMenu" >
+              <!-- Anclas clientes -->
+              <button mat-menu-item>Profile</button>
+              <button mat-menu-item>See projects</button>
+              <button mat-menu-item>Report Time</button>
+              <button mat-menu-item>Cerrar sesion</button>
+            </mat-menu>
+          </label>
+        </ng-template>
+      </div>
+      </nav>
+      <!-- Descripcion -->
+      <div class="row h-100 align-items-center">
+        <div class="col-6 text-white">
+          <!-- titulo -->
+          <h1 class="text-capitalize">
+            <span class="both h4">Life just easier now</span> <br>
+            Get full control of your time
+          </h1>
+          <!-- Descripcion -->
+          <p>
+            Projectify is a solution develop to let the user control his full time<br>
+            to let the user control his full time and watch every week effort.<br>
+          </p>
+          <!-- Btn -->
+          <a href="#" class="text-reset btn btn-success botonCompra both" >See all our projects</a>
+        </div>
+      </div>
+    </div>
+    <img src="../../../../../assets/Images/cut-header.svg" alt="">
+  </header>
+  
+  
